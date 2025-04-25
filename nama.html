@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form dengan JavaScript</title>
+</head>
+<body>
+    <h1>Masukkan Nama Anda</h1>
+    <input type="text" id="namaInput" placeholder="Masukkan nama">
+    <button onclick="tampilkanNama()">Tampilkan Nama</button>
+    <p id="output"></p>
+    <script>
+        function tampilkanNama() {
+            var nama = document.getElementById("namaInput").value;
+            document.getElementById("output").innerHTML = "Halo, " + nama + "!";
+        }
+    </script>
+</body>
+</html>
