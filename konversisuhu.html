@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Konversi Suhu</title>
+</head>
+<body>
+    <h2>Kalkulator Konversi Suhu</h2>
+    <label for="suhu">Masukkan suhu:</label>
+    <input type="number" id="suhu" placeholder="Masukkan suhu">
+    
+    <label for="konversi">Pilih konversi:</label>
+    <select id="konversi">
+        <option value="toCelsius">Fahrenheit ke Celsius</option>
+        <option value="toFahrenheit">Celsius ke Fahrenheit</option>
+    </select>
+    
+    <button onclick="hitungSuhu()">Hitung</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungSuhu() {
+            let suhu = document.getElementById("suhu").value;
+            let konversi = document.getElementById("konversi").value;
+            let hasil = document.getElementById("hasil");
+            
+            if (konversi === "toCelsius") {
+                let celsius = (suhu - 32) * 5/9;
+                hasil.innerHTML = suhu + "°F = " + celsius.toFixed(2) + "°C";
+            } else {
+                let fahrenheit = (suhu * 9/5) + 32;
+                hasil.innerHTML = suhu + "°C = " + fahrenheit.toFixed(2) + "°F";
+            }
+        }
+    </script>
+</body>
+</html>
