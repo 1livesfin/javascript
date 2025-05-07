@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Khodam</title>
+</head>
+<body>
+    <h2>Cek Khodam</h2>
+    <label for="nama">Masukkan nama:</label>
+    <input type="text" id="nama" placeholder="Masukkan nama">
+    
+    <button onclick="cekKhodam()">Cek Khodam</button>
+    <p id="hasil"></p>
+
+    <script>
+        function cekKhodam() {
+            let nama = document.getElementById("nama").value;
+            let hasil = document.getElementById("hasil");
+
+            let daftarKhodam = ["Reg Ireng", "Sendok Makan Rendah", "Sendok Makan Tinggi", "Elaaa Brazil", "Toa Mesjid", "Syndrome Velocity", "Macan Polkadot", "Makan Siang Gratis", "Pulang", "Aing Maung"];
+            let khodamTerpilih = daftarKhodam[Math.floor(Math.random() * daftarKhodam.length)];
+
+            hasil.innerHTML = "Khodam untuk " + nama + " adalah: " + khodamTerpilih;
+        }
+    </script>
+</body>
+</html>
