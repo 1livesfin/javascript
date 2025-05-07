@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengecekan Ganjil Genap</title>
+</head>
+<body>
+    <h2>Cek Angka Ganjil atau Genap</h2>
+    <input type="number" id="angka" placeholder="Masukkan angka">
+    <button onclick="cekAngka()">Cek</button>
+    <p id="hasil"></p>
+
+    <script>
+        function cekAngka() {
+            let angka = document.getElementById("angka").value;
+            let hasil = document.getElementById("hasil");
+
+            if (angka % 2 === 0) {
+                hasil.innerHTML = angka + " adalah **Genap**";
+            } else {
+                hasil.innerHTML = angka + " adalah **Ganjil**";
+            }
+        }
+    </script>
+</body>
+</html>
