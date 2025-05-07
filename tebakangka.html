@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tebak Angka</title>
+    <script>
+        function tebakAngka() {
+            var angkaRahasia = Math.floor(Math.random() * 10) + 1; // Angka antara 1-10
+            var tebakan = prompt("Tebak angka (1-10):");
+
+            if (tebakan == angkaRahasia) {
+                alert("Selamat! Tebakan Anda benar.");
+            } else {
+                alert("Maaf, angka yang benar adalah " + angkaRahasia);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="tebakAngka()">Mulai Tebak Angka</button>
+</body>
+</html>
