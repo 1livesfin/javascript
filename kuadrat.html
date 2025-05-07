@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Kuadrat</title>
+</head>
+<body>
+    <h2>Kalkulator Kuadrat</h2>
+    <label for="angka">Masukkan angka:</label>
+    <input type="number" id="angka" placeholder="Masukkan angka">
+    
+    <button onclick="hitungKuadrat()">Hitung Kuadrat</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungKuadrat() {
+            let angka = document.getElementById("angka").value;
+            let hasil = document.getElementById("hasil");
+            
+            let kuadrat = angka * angka;
+            hasil.innerHTML = "Kuadrat dari " + angka + " adalah " + kuadrat;
+        }
+    </script>
+</body>
+</html>
