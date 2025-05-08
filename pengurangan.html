@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program Pengurangan</title>
+    <script>
+        function hitungPengurangan() {
+            let angka1 = parseFloat(prompt("Masukkan angka pertama:"));
+            let angka2 = parseFloat(prompt("Masukkan angka kedua:"));
+
+            if (isNaN(angka1) || isNaN(angka2)) {
+                alert("Harap masukkan angka yang valid.");
+            } else {
+                const hasil = angka1 - angka2;
+                alert("Hasil pengurangan: " + hasil);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="hitungPengurangan()">Hitung Pengurangan</button>
+</body>
+</html>
