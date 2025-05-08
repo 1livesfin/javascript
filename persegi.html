@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Persegi</title>
+    <script>
+        function hitungPersegi() {
+            let sisi = parseFloat(prompt("Masukkan panjang sisi persegi:"));
+
+            if (isNaN(sisi) || sisi <= 0) {
+                alert("Harap masukkan angka yang valid.");
+            } else {
+                const luas = sisi * sisi;
+                const keliling = 4 * sisi;
+                alert("Luas persegi: " + luas + "\nKeliling persegi: " + keliling);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="hitungPersegi()">Hitung Persegi</button>
+</body>
+</html>
