@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cek Kecocokan Jodoh</title>
+    <script>
+        function cekJodoh() {
+            let nama1 = prompt("Masukkan nama pertama:");
+            let nama2 = prompt("Masukkan nama kedua:");
+
+            if (!nama1 || !nama2) {
+                alert("Harap masukkan kedua nama!");
+                return;
+            }
+
+            let kecocokan = Math.floor(Math.random() * 101); // Angka antara 0-100%
+            alert("Kecocokan antara " + nama1 + " dan " + nama2 + " adalah " + kecocokan + "%!");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="cekJodoh()">Cek Kecocokan Jodoh</button>
+</body>
+</html>
