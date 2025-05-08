@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konversi Jam ke Menit dan Detik</title>
+    <script>
+        function konversiWaktu() {
+            let jam = parseFloat(prompt("Masukkan jumlah jam:"));
+
+            if (isNaN(jam) || jam < 0) {
+                alert("Harap masukkan jumlah jam yang valid.");
+            } else {
+                const menit = jam * 60;
+                const detik = jam * 3600;
+                alert(jam + " jam setara dengan:\n" + menit + " menit\n" + detik + " detik");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="konversiWaktu()">Konversi Jam</button>
+</body>
+</html>
