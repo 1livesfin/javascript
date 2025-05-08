@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Limas Segitiga</title>
+    <script>
+        function hitungLimasSegitiga() {
+            let alas = parseFloat(prompt("Masukkan panjang alas segitiga:"));
+            let tinggiSegitiga = parseFloat(prompt("Masukkan tinggi segitiga:"));
+            let tinggiLimas = parseFloat(prompt("Masukkan tinggi limas:"));
+
+            if (isNaN(alas) || isNaN(tinggiSegitiga) || isNaN(tinggiLimas) || alas <= 0 || tinggiSegitiga <= 0 || tinggiLimas <= 0) {
+                alert("Harap masukkan angka yang valid.");
+            } else {
+                const luasAlas = (alas * tinggiSegitiga) / 2;
+                const volume = (luasAlas * tinggiLimas) / 3;
+                alert("Volume limas segitiga: " + volume);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="hitungLimasSegitiga()">Hitung Limas Segitiga</button>
+</body>
+</html>
