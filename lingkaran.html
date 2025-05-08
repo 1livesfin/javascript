@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Lingkaran</title>
+    <script>
+        function hitungLingkaran() {
+            let jariJari = parseFloat(prompt("Masukkan jari-jari lingkaran:"));
+
+            if (isNaN(jariJari) || jariJari <= 0) {
+                alert("Harap masukkan angka yang valid.");
+            } else {
+                const luas = Math.PI * Math.pow(jariJari, 2);
+                const keliling = 2 * Math.PI * jariJari;
+                alert("Luas lingkaran: " + luas.toFixed(2) + "\nKeliling lingkaran: " + keliling.toFixed(2));
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="hitungLingkaran()">Hitung Lingkaran</button>
+</body>
+</html>
