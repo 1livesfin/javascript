@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cek Bilangan</title>
+    <script>
+        function cekBilangan() {
+            let angka = parseFloat(prompt("Masukkan angka:"));
+
+            if (isNaN(angka)) {
+                alert("Harap masukkan angka yang valid.");
+            } else if (angka > 0) {
+                alert("Bilangan positif.");
+            } else if (angka < 0) {
+                alert("Bilangan negatif.");
+            } else {
+                alert("Bilangan nol.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="cekBilangan()">Cek Bilangan</button>
+</body>
+</html>
