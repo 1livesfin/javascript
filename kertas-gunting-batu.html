@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Batu Gunting Kertas</title>
+    <script>
+        function mainkanGame(pilihanPengguna) {
+            const pilihanKomputer = ["batu", "gunting", "kertas"][Math.floor(Math.random() * 3)];
+
+            let hasil = "";
+            if (pilihanPengguna === pilihanKomputer) {
+                hasil = "Seri!";
+            } else if (
+                (pilihanPengguna === "batu" && pilihanKomputer === "gunting") ||
+                (pilihanPengguna === "gunting" && pilihanKomputer === "kertas") ||
+                (pilihanPengguna === "kertas" && pilihanKomputer === "batu")
+            ) {
+                hasil = "Kamu menang!";
+            } else {
+                hasil = "Kamu kalah!";
+            }
+
+            alert("Kamu memilih: " + pilihanPengguna + "\nKomputer memilih: " + pilihanKomputer + "\nHasil: " + hasil);
+        }
+    </script>
+</head>
+<body>
+    <h2>Game Batu Gunting Kertas</h2>
+    <button onclick="mainkanGame('batu')">Batu</button>
+    <button onclick="mainkanGame('gunting')">Gunting</button>
+    <button onclick="mainkanGame('kertas')">Kertas</button>
+</body>
+</html>
