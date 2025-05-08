@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Akar Kuadrat</title>
+    <script>
+        function hitungAkarKuadrat() {
+            let angka = parseFloat(prompt("Masukkan angka:"));
+
+            if (isNaN(angka) || angka < 0) {
+                alert("Harap masukkan angka yang valid (positif atau nol).");
+            } else {
+                const hasil = Math.sqrt(angka);
+                alert("Akar kuadrat dari " + angka + " adalah: " + hasil);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="hitungAkarKuadrat()">Hitung Akar Kuadrat</button>
+</body>
+</html>
