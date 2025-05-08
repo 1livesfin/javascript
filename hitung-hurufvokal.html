@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Huruf Vokal</title>
+    <script>
+        function hitungVokal() {
+            let teks = prompt("Masukkan teks:");
+            if (!teks) {
+                alert("Harap masukkan teks yang valid.");
+                return;
+            }
+
+            let vokal = teks.match(/[aeiouAEIOU]/g); // Mencari huruf vokal dalam teks
+            let jumlahVokal = vokal ? vokal.length : 0;
+
+            alert("Jumlah huruf vokal dalam teks: " + jumlahVokal);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="hitungVokal()">Hitung Huruf Vokal</button>
+</body>
+</html>
