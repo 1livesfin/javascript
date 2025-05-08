@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konversi Mata Uang USD ke IDR</title>
+    <script>
+        function konversiMataUang() {
+            let usd = parseFloat(prompt("Masukkan jumlah USD:"));
+            const kurs = 15600; // Ubah sesuai nilai tukar saat ini
+
+            if (isNaN(usd) || usd <= 0) {
+                alert("Harap masukkan jumlah USD yang valid.");
+            } else {
+                let idr = usd * kurs;
+                alert(usd + " USD setara dengan " + idr.toLocaleString("id-ID") + " IDR.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="konversiMataUang()">Konversi USD ke IDR</button>
+</body>
+</html>
