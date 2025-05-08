@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Balok</title>
+    <script>
+        function hitungBalok() {
+            let panjang = parseFloat(prompt("Masukkan panjang balok:"));
+            let lebar = parseFloat(prompt("Masukkan lebar balok:"));
+            let tinggi = parseFloat(prompt("Masukkan tinggi balok:"));
+
+            if (isNaN(panjang) || isNaN(lebar) || isNaN(tinggi) || panjang <= 0 || lebar <= 0 || tinggi <= 0) {
+                alert("Harap masukkan angka yang valid.");
+            } else {
+                const volume = panjang * lebar * tinggi;
+                const luasPermukaan = 2 * (panjang * lebar + panjang * tinggi + lebar * tinggi);
+                alert("Volume balok: " + volume + "\nLuas permukaan balok: " + luasPermukaan);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="hitungBalok()">Hitung Balok</button>
+</body>
+</html>
