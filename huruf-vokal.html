@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menampilkan Huruf Vokal</title>
+    <script>
+        function tampilkanVokal() {
+            let teks = prompt("Masukkan teks:");
+            if (!teks) {
+                alert("Harap masukkan teks yang valid.");
+                return;
+            }
+
+            let vokal = teks.match(/[aeiouAEIOU]/g); // Mencari huruf vokal dalam teks
+            let hasil = vokal ? vokal.join(", ") : "Tidak ada huruf vokal ditemukan.";
+
+            alert("Huruf vokal yang ditemukan: " + hasil);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="tampilkanVokal()">Tampilkan Huruf Vokal</button>
+</body>
+</html>
