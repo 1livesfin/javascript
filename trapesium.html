@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Trapesium</title>
+    <script>
+        function hitungTrapesium() {
+            let alasAtas = parseFloat(prompt("Masukkan panjang alas atas:"));
+            let alasBawah = parseFloat(prompt("Masukkan panjang alas bawah:"));
+            let tinggi = parseFloat(prompt("Masukkan tinggi trapesium:"));
+            let sisiKiri = parseFloat(prompt("Masukkan panjang sisi kiri:"));
+            let sisiKanan = parseFloat(prompt("Masukkan panjang sisi kanan:"));
+
+            if (isNaN(alasAtas) || isNaN(alasBawah) || isNaN(tinggi) || isNaN(sisiKiri) || isNaN(sisiKanan)) {
+                alert("Harap masukkan angka yang valid.");
+            } else {
+                const luas = ((alasAtas + alasBawah) * tinggi) / 2;
+                const keliling = alasAtas + alasBawah + sisiKiri + sisiKanan;
+                alert("Luas trapesium: " + luas + "\nKeliling trapesium: " + keliling);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="hitungTrapesium()">Hitung Trapesium</button>
+</body>
+</html>
