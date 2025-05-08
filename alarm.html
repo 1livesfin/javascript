@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alarm Sederhana</title>
+    <script>
+        function setAlarm() {
+            let waktu = parseInt(prompt("Masukkan waktu alarm dalam detik:"));
+
+            if (isNaN(waktu) || waktu <= 0) {
+                alert("Harap masukkan waktu yang valid.");
+                return;
+            }
+
+            alert("Alarm akan berbunyi dalam " + waktu + " detik.");
+            
+            setTimeout(function() {
+                alert("⏰ Waktunya bangun!");
+            }, waktu * 1000);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="setAlarm()">Setel Alarm</button>
+</body>
+</html>
