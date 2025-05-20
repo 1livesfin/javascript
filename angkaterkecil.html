@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Angka Terkecil</title>
+</head>
+<body>
+    <h2>Masukkan angka, pisahkan dengan koma:</h2>
+    <input type="text" id="angkaInput">
+    <button onclick="hitungTerkecil()">Hitung</button>
+    <p>Angka terkecil: <span id="hasil"></span></p>
+
+    <script>
+        function hitungTerkecil() {
+            let input = document.getElementById("angkaInput").value;
+            let angkaArray = input.split(",").map(Number);
+            let angkaTerkecil = Math.min(...angkaArray);
+            document.getElementById("hasil").textContent = angkaTerkecil;
+        }
+    </script>
+</body>
+</html>
