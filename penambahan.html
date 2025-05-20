@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Penjumlahan Angka</title>
+    <script>
+        function tambah() {
+            var angka1 = parseFloat(document.getElementById("angka1").value);
+            var angka2 = parseFloat(document.getElementById("angka2").value);
+            var hasil = angka1 + angka2;
+            document.getElementById("hasil").innerText = "Hasil: " + hasil;
+        }
+    </script>
+</head>
+<body>
+    <h2>Program Penjumlahan</h2>
+    <input type="number" id="angka1" placeholder="Masukkan angka pertama">
+    <input type="number" id="angka2" placeholder="Masukkan angka kedua">
+    <button onclick="tambah()">Tambah</button>
+    <p id="hasil"></p>
+</body>
+</html>
