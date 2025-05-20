@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping For</title>
+</head>
+<body>
+    <h2>Looping `for` dari 1-10</h2>
+    <ul id="hasil"></ul>
+
+    <script>
+        let output = document.getElementById("hasil");
+        for(let i = 1; i <= 10; i++) {
+            let li = document.createElement("li");
+            li.textContent = "Angka: " + i;
+            output.appendChild(li);
+        }
+    </script>
+</body>
+</html>

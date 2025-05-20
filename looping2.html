@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping While</title>
+</head>
+<body>
+    <h2>Looping `while` dari 10-1</h2>
+    <ul id="hasil"></ul>
+
+    <script>
+        let output = document.getElementById("hasil");
+        let i = 10;
+        while(i > 0) {
+            let li = document.createElement("li");
+            li.textContent = "Angka: " + i;
+            output.appendChild(li);
+            i--;
+        }
+    </script>
+</body>
+</html>

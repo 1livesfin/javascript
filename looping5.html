@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping dengan Map</title>
+</head>
+<body>
+    <h2>Looping Array Angka dengan Map</h2>
+    <ul id="hasil"></ul>
+
+    <script>
+        let output = document.getElementById("hasil");
+        let angkaArray = [1, 2, 3, 4, 5];
+
+        let angkaBaru = angkaArray.map(angka => angka * 2);
+
+        angkaBaru.forEach(angka => {
+            let li = document.createElement("li");
+            li.textContent = "Angka baru: " + angka;
+            output.appendChild(li);
+        });
+    </script>
+</body>
+</html>

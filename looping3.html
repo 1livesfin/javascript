@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Do While</title>
+</head>
+<body>
+    <h2>Masukkan angka lebih besar dari 10:</h2>
+    <input type="number" id="inputAngka">
+    <button onclick="cekAngka()">Cek</button>
+    <p id="hasil"></p>
+
+    <script>
+        function cekAngka() {
+            let angka;
+            do {
+                angka = document.getElementById("inputAngka").value;
+                document.getElementById("hasil").textContent = "Angka yang dimasukkan: " + angka;
+            } while (angka <= 10);
+        }
+    </script>
+</body>
+</html>

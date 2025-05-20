@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping forEach</title>
+</head>
+<body>
+    <h2>Looping Array dengan forEach</h2>
+    <ul id="hasil"></ul>
+
+    <script>
+        let output = document.getElementById("hasil");
+        let namaArray = ["Aldi", "Budi", "Citra", "Dewi", "Eka"];
+        
+        namaArray.forEach(nama => {
+            let li = document.createElement("li");
+            li.textContent = "Nama: " + nama;
+            output.appendChild(li);
+        });
+    </script>
+</body>
+</html>
