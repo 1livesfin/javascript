@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Klik Cepat</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        button { font-size: 20px; padding: 10px; margin-top: 20px; cursor: pointer; }
+        #info, #skor { font-size: 20px; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Game Klik Cepat</h2>
+    <button onclick="startGame()" id="btnStart">Mulai Permainan</button>
+    <button onclick="klik()" id="btnKlik" style="display:none;">Klik!</button>
+    <p id="info"></p>
+    <p id="skor"></p>
+
+    <script>
+        let skor = 0;
+        let waktuTersisa = 10;
+        let interval;
+
+        function startGame() {
+            skor = 0;
+            waktuTersisa = 10;
+            document.getElementById("btnKlik").style.display = "inline-block";
+            document.getElementById("btnStart").style.display = "none";
+            document.getElementById("skor").innerText = "Skor: " + skor;
+
+            interval = setInterval(() => {
+                waktuTersisa--;
+                document.getElementById("info").innerText = "Waktu tersisa: " + waktuTersisa + " detik";
+                
+                if (waktuTersisa <= 0) {
+                    clearInterval(interval);
+                    document.getElementById("info").innerText = "Game Over!";
+                    document.getElementById("btnKlik").style.display = "none";
+                    document.getElementById("btnStart").style.display = "inline-block";
+                }
+            }, 1000);
+        }
+
+        function klik() {
+            skor++;
+            document.getElementById("skor").innerText = "Skor: " + skor;
+        }
+    </script>
+</body>
+</html>
