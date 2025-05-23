@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Nama dengan Looping</title>
+</head>
+<body>
+    <h2>Daftar Nama:</h2>
+    <ul id="namaList"></ul>
+
+    <script>
+        let nama = ["Alice", "Bob", "Charlie", "David", "Eve"];
+        let listElement = document.getElementById("namaList");
+
+        for (let i = 0; i < nama.length; i++) {
+            let li = document.createElement("li");
+            li.innerText = nama[i];
+            listElement.appendChild(li);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Akurasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        select, input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #hasil {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Konversi Akurasi</h2>
+    <input type="number" id="akurasiInput" placeholder="Masukkan akurasi (0-1)">
+    <select id="formatOption">
+        <option value="percent">Persentase (%)</option>
+        <option value="decimal">Desimal</option>
+        <option value="ratio">Perbandingan (x/100)</option>
+    </select>
+    <button onclick="convertAccuracy()">Konversi</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function convertAccuracy() {
+            let akurasi = parseFloat(document.getElementById("akurasiInput").value);
+            let format = document.getElementById("formatOption").value;
+
+            if (isNaN(akurasi) || akurasi < 0 || akurasi > 1) {
+                document.getElementById("hasil").innerHTML = "Harap masukkan angka antara 0 dan 1!";
+                return;
+            }
+
+            let hasilKonversi;
+            if (format === "percent") {
+                hasilKonversi = `${akurasi * 100}%`;
+            } else if (format === "decimal") {
+                hasilKonversi = akurasi.toFixed(4);
+            } else if (format === "ratio") {
+                hasilKonversi = `${akurasi * 100}/100`;
+            }
+
+            document.getElementById("hasil").innerHTML = `<strong>Hasil Konversi:</strong> ${hasilKonversi}`;
+        }
+    </script>
+</body>
+</html>

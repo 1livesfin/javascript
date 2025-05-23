@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulasi Elemen dengan JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            line-height: 200px;
+            font-size: 20px;
+            font-weight: bold;
+            margin: auto;
+            border: 2px solid black;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Manipulasi Elemen</h2>
+    <div id="box">Kotak</div>
+    <button onclick="ubahWarna()">Ubah Warna</button>
+    <button onclick="ubahTeks()">Ubah Teks</button>
+    <button onclick="ubahGaya()">Ubah Gaya</button>
+
+    <script>
+        function ubahWarna() {
+            document.getElementById("box").style.backgroundColor = "yellow";
+        }
+
+        function ubahTeks() {
+            document.getElementById("box").innerText = "Teks Baru!";
+        }
+
+        function ubahGaya() {
+            let box = document.getElementById("box");
+            box.style.fontSize = "30px";
+            box.style.color = "red";
+            box.style.borderRadius = "20px";
+        }
+    </script>
+</body>
+</html>

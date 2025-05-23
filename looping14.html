@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Looping Huruf dari Kata</title>
+</head>
+<body>
+    <h2>Menampilkan huruf satu per satu</h2>
+    <p id="output17"></p>
+
+    <script>
+        let kata = "JavaScript";
+        let output = "";
+
+        for (let i = 0; i < kata.length; i++) {
+            output += kata[i] + "<br>";
+        }
+
+        document.getElementById("output17").innerHTML = output;
+    </script>
+</body>
+</html>

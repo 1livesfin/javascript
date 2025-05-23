@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Kubus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #hasil {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hitung Volume & Luas Permukaan Kubus</h2>
+    <input type="number" id="sisi" placeholder="Masukkan panjang sisi kubus">
+    <button onclick="hitungKubus()">Hitung</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function hitungKubus() {
+            let sisi = parseFloat(document.getElementById("sisi").value);
+
+            if (!sisi) {
+                document.getElementById("hasil").innerHTML = "Harap masukkan panjang sisi kubus!";
+                return;
+            }
+
+            let volume = Math.pow(sisi, 3); // V = sisi^3
+            let luasPermukaan = 6 * Math.pow(sisi, 2); // L = 6 × sisi^2
+
+            document.getElementById("hasil").innerHTML = `
+                <p><strong>Volume Kubus:</strong> ${volume} satuan kubik</p>
+                <p><strong>Luas Permukaan Kubus:</strong> ${luasPermukaan} satuan persegi</p>
+            `;
+        }
+    </script>
+</body>
+</html>

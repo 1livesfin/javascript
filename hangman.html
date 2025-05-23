@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hangman</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .word {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin: 20px;
+        }
+        .letters {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 8px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #message {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Permainan Hangman</h2>
+    <p class="word" id="wordDisplay">_ _ _ _ _</p>
+    <p id="message">Tebak huruf!</p>
+    <div class="letters">
+        <button onclick="guessLetter('A')">A</button>
+        <button onclick="guessLetter('B')">B</button>
+        <button onclick="guessLetter('C')">C</button>
+        <button onclick="guessLetter('D')">D</button>
+        <button onclick="guessLetter('E')">E</button>
+        <button onclick="guessLetter('F')">F</button>
+        <button onclick="guessLetter('G')">G</button>
+        <!-- Tambahkan huruf lainnya -->
+    </div>
+
+    <script>
+        let word = "JAVASCRIPT"; // Kata yang harus ditebak
+        let guessedWord = Array(word.length).fill("_"); // Menampilkan kata sebagai garis bawah
+        let attemptsLeft = 6;
+
+        function guessLetter(letter) {
+            let correctGuess = false;
+            for (let i = 0; i < word.length; i++) {
+                if (word[i] === letter) {
+                    guessedWord[i] = letter;
+                    correctGuess = true;
+                }
+            }
+
+            document.getElementById("wordDisplay").innerText = guessedWord.join(" ");
+
+            if (!correctGuess) {
+                attemptsLeft--;
+                document.getElementById("message").innerText = `Salah! Sisa kesempatan: ${attemptsLeft}`;
+            } else {
+                document.getElementById("message").innerText = "Bagus! Lanjutkan menebak.";
+            }
+
+            if (!guessedWord.includes("_")) {
+                document.getElementById("message").innerText = "Selamat! Kamu menang!";
+            } else if (attemptsLeft === 0) {
+                document.getElementById("message").innerText = "Game Over! Kata yang benar adalah: " + word;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #timerDisplay {
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Countdown Timer</h2>
+    <input type="number" id="timeInput" placeholder="Masukkan waktu (detik)">
+    <button onclick="startTimer()">Mulai</button>
+
+    <p id="timerDisplay">00:00</p>
+
+    <script>
+        let countdown;
+
+        function startTimer() {
+            let timeLeft = parseInt(document.getElementById("timeInput").value);
+            
+            if (isNaN(timeLeft) || timeLeft <= 0) {
+                document.getElementById("timerDisplay").innerText = "Masukkan waktu yang valid!";
+                return;
+            }
+
+            clearInterval(countdown); // Hentikan timer sebelumnya
+            countdown = setInterval(() => {
+                let minutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
+                document.getElementById("timerDisplay").innerText = 
+                    `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+                timeLeft--;
+
+                if (timeLeft < 0) {
+                    clearInterval(countdown);
+                    document.getElementById("timerDisplay").innerText = "Waktu Habis!";
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

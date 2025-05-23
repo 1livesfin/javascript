@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Looping Faktor Angka</title>
+</head>
+<body>
+    <h2>Cari faktor dari angka</h2>
+    <input type="number" id="inputAngka" placeholder="Masukkan angka">
+    <button onclick="cariFaktor()">Cari Faktor</button>
+    <p id="output21"></p>
+
+    <script>
+        function cariFaktor() {
+            let angka = parseInt(document.getElementById("inputAngka").value);
+            let faktor = [];
+
+            for (let i = 1; i <= angka; i++) {
+                if (angka % i === 0) {
+                    faktor.push(i);
+                }
+            }
+
+            document.getElementById("output21").innerHTML = `Faktor dari ${angka}: ${faktor.join(", ")}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hitung Vokal dengan Looping</title>
+</head>
+<body>
+    <h2>Hitung jumlah huruf vokal dalam teks</h2>
+    <input type="text" id="inputVokal" placeholder="Masukkan teks">
+    <button onclick="hitungVokal()">Hitung</button>
+    <p id="output23"></p>
+
+    <script>
+        function hitungVokal() {
+            let text = document.getElementById("inputVokal").value.toLowerCase();
+            let jumlahVokal = 0;
+            let vokal = ["a", "e", "i", "o", "u"];
+
+            for (let i = 0; i < text.length; i++) {
+                if (vokal.includes(text[i])) {
+                    jumlahVokal++;
+                }
+            }
+
+            document.getElementById("output23").innerHTML = `Jumlah huruf vokal: ${jumlahVokal}`;
+        }
+    </script>
+</body>
+</html>

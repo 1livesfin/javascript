@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemeriksa Anagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #hasil {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pemeriksa Anagram</h2>
+    <input type="text" id="kata1" placeholder="Masukkan kata pertama">
+    <input type="text" id="kata2" placeholder="Masukkan kata kedua">
+    <button onclick="cekAnagram()">Periksa</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function cekAnagram() {
+            let kata1 = document.getElementById("kata1").value.toLowerCase().replace(/\s/g, "");
+            let kata2 = document.getElementById("kata2").value.toLowerCase().replace(/\s/g, "");
+
+            if (!kata1 || !kata2) {
+                document.getElementById("hasil").innerHTML = "Harap masukkan kedua kata!";
+                return;
+            }
+
+            let sortedKata1 = kata1.split("").sort().join("");
+            let sortedKata2 = kata2.split("").sort().join("");
+
+            let hasil = sortedKata1 === sortedKata2 ? "Kata tersebut adalah anagram!" : "Bukan anagram!";
+            document.getElementById("hasil").innerHTML = `<strong>${hasil}</strong>`;
+        }
+    </script>
+</body>
+</html>

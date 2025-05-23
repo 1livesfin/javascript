@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemeriksa Bilangan Prima</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #hasil {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pemeriksa Bilangan Prima</h2>
+    <input type="number" id="angkaInput" placeholder="Masukkan angka">
+    <button onclick="periksaPrima()">Periksa</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function isPrima(n) {
+            if (n < 2) return false;
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i === 0) return false;
+            }
+            return true;
+        }
+
+        function periksaPrima() {
+            let angka = parseInt(document.getElementById("angkaInput").value);
+
+            if (isNaN(angka) || angka <= 0) {
+                document.getElementById("hasil").innerHTML = "Harap masukkan angka yang valid!";
+                return;
+            }
+
+            let hasil = isPrima(angka) ? "Bilangan prima" : "Bukan bilangan prima";
+            document.getElementById("hasil").innerHTML = `<strong>${angka} adalah ${hasil}.</strong>`;
+        }
+    </script>
+</body>
+</html>

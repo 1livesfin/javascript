@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Balik Teks dengan Looping</title>
+</head>
+<body>
+    <h2>Balik teks yang dimasukkan</h2>
+    <input type="text" id="inputText" placeholder="Masukkan teks">
+    <button onclick="balikTeks()">Balik Teks</button>
+    <p id="output22"></p>
+
+    <script>
+        function balikTeks() {
+            let text = document.getElementById("inputText").value;
+            let reversedText = "";
+
+            for (let i = text.length - 1; i >= 0; i--) {
+                reversedText += text[i];
+            }
+
+            document.getElementById("output22").innerHTML = `Teks terbalik: ${reversedText}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Petualangan Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #gameText {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Game Petualangan Sederhana</h2>
+    <p id="gameText">Kamu berada di tengah hutan. Apa yang ingin kamu lakukan?</p>
+    <button onclick="pilihAksi('jelajah')">Jelajahi hutan</button>
+    <button onclick="pilihAksi('cari_harta')">Cari harta karun</button>
+    <button onclick="pilihAksi('keluar')">Keluar dari hutan</button>
+
+    <script>
+        function pilihAksi(aksi) {
+            let gameText = document.getElementById("gameText");
+
+            if (aksi === "jelajah") {
+                gameText.innerText = "Kamu berjalan lebih dalam ke hutan dan menemukan sebuah gua misterius!";
+            } else if (aksi === "cari_harta") {
+                gameText.innerText = "Kamu menggali di bawah pohon tua dan menemukan sebuah peti harta karun!";
+            } else if (aksi === "keluar") {
+                gameText.innerText = "Kamu berhasil keluar dari hutan dengan selamat!";
+            }
+        }
+    </script>
+</body>
+</html>

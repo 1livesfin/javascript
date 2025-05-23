@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saklar Lampu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            width: 150px;
+            height: auto;
+            margin: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Menyalakan & Mematikan Lampu</h2>
+    <img id="lampu" src="https://www.w3schools.com/js/pic_bulboff.gif" alt="Lampu Mati">
+    <br>
+    <button onclick="nyalakanLampu()">Nyalakan</button>
+    <button onclick="matikanLampu()">Matikan</button>
+
+    <script>
+        function nyalakanLampu() {
+            document.getElementById("lampu").src = "https://www.w3schools.com/js/pic_bulbon.gif";
+        }
+
+        function matikanLampu() {
+            document.getElementById("lampu").src = "https://www.w3schools.com/js/pic_bulboff.gif";
+        }
+    </script>
+</body>
+</html>

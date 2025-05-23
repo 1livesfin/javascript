@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Angka Terbesar dengan Looping</title>
+</head>
+<body>
+    <h2>Menentukan angka terbesar dalam array</h2>
+    <p id="output18"></p>
+
+    <script>
+        let angka = [5, 12, 9, 34, 25, 50, 7];
+        let terbesar = angka[0];
+        let i = 1;
+
+        while (i < angka.length) {
+            if (angka[i] > terbesar) {
+                terbesar = angka[i];
+            }
+            i++;
+        }
+
+        document.getElementById("output18").innerHTML = `Angka terbesar: ${terbesar}`;
+    </script>
+</body>
+</html>

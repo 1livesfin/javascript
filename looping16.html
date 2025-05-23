@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Looping Input Valid</title>
+</head>
+<body>
+    <h2>Masukkan angka lebih dari 10!</h2>
+    <p id="output19"></p>
+
+    <script>
+        let angka;
+
+        do {
+            angka = prompt("Masukkan angka lebih dari 10:");
+        } while (angka <= 10 || isNaN(angka));
+
+        document.getElementById("output19").innerHTML = `Angka yang valid: ${angka}`;
+    </script>
+</body>
+</html>

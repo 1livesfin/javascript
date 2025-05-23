@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deret Angka Acak</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .deret {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #000;
+            display: inline-block;
+            width: 300px;
+            height: auto;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Generator Deret Angka Acak</h2>
+    <div class="deret" id="randomSeries">?</div>
+    <br>
+    <button onclick="generateRandomSeries()">Hasilkan Deret Acak</button>
+
+    <script>
+        function generateRandomSeries() {
+            let length = 10; // Panjang deret angka
+            let min = 1;
+            let max = 100;
+            let randomSeries = Array.from({ length: length }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+            document.getElementById("randomSeries").innerText = randomSeries.join(", ");
+        }
+    </script>
+</body>
+</html>
