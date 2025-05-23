@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konverter Format Teks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        select, input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #hasil {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Konverter Format Teks</h2>
+    <input type="text" id="inputText" placeholder="Masukkan teks">
+    <select id="formatOption">
+        <option value="uppercase">UPPERCASE (Huruf Besar)</option>
+        <option value="lowercase">lowercase (Huruf Kecil)</option>
+        <option value="titlecase">Title Case (Huruf Awal Kapital)</option>
+    </select>
+    <button onclick="convertText()">Konversi</button>
+    
+    <p id="hasil"></p>
+
+    <script>
+        function convertText() {
+            let text = document.getElementById("inputText").value;
+            let format = document.getElementById("formatOption").value;
+
+            if (!text) {
+                document.getElementById("hasil").innerText = "Harap masukkan teks!";
+                return;
+            }
+
+            let formattedText;
+            if (format === "uppercase") {
+                formattedText = text.toUpperCase();
+            } else if (format === "lowercase") {
+                formattedText = text.toLowerCase();
+            } else if (format === "titlecase") {
+                formattedText = text.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ");
+            }
+
+            document.getElementById("hasil").innerHTML = `<strong>Hasil:</strong> ${formattedText}`;
+        }
