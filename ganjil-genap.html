@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemeriksa Ganjil atau Genap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #hasil {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pemeriksa Angka Ganjil atau Genap</h2>
+    <input type="number" id="angkaInput" placeholder="Masukkan angka">
+    <button onclick="periksaAngka()">Periksa</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function periksaAngka() {
+            let angka = document.getElementById("angkaInput").value;
+
+            if (!angka) {
+                document.getElementById("hasil").innerHTML = "Harap masukkan angka!";
+                return;
+            }
+
+            let hasil = angka % 2 === 0 ? "Genap" : "Ganjil";
+            document.getElementById("hasil").innerHTML = `Angka ${angka} adalah ${hasil}.`;
+        }
+    </script>
+</body>
+</html>

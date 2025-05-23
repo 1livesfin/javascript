@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Pengiriman Barang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form Pengiriman Barang</h2>
+    <input type="text" id="namaBarang" placeholder="Nama Barang">
+    <input type="number" id="beratBarang" placeholder="Berat Barang (kg)">
+    <input type="text" id="tujuan" placeholder="Tujuan Pengiriman">
+    <button onclick="kirimBarang()">Kirim Barang</button>
+
+    <div id="output"></div>
+
+    <script>
+        function kirimBarang() {
+            let namaBarang = document.getElementById("namaBarang").value;
+            let beratBarang = document.getElementById("beratBarang").value;
+            let tujuan = document.getElementById("tujuan").value;
+
+            if (!namaBarang || !beratBarang || !tujuan) {
+                document.getElementById("output").innerHTML = "Harap masukkan semua data!";
+                return;
+            }
+
+            let biayaPengiriman = beratBarang * 5000; // Simulasi biaya pengiriman berdasarkan berat
+
+            document.getElementById("output").innerHTML = `
+                <p><strong>Nama Barang:</strong> ${namaBarang}</p>
+                <p><strong>Berat:</strong> ${beratBarang} kg</p>
+                <p><strong>Tujuan:</strong> ${tujuan}</p>
+                <p><strong>Estimasi Biaya Pengiriman:</strong> Rp ${biayaPengiriman}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

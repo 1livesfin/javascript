@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hapus Tanda Baca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #hasil {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hapus Tanda Baca dari Teks</h2>
+    <input type="text" id="inputText" placeholder="Masukkan teks">
+    <button onclick="hapusTandaBaca()">Hapus Tanda Baca</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function hapusTandaBaca() {
+            let inputText = document.getElementById("inputText").value;
+
+            if (!inputText) {
+                document.getElementById("hasil").innerHTML = "Harap masukkan teks!";
+                return;
+            }
+
+            let hasilText = inputText.replace(/[^\w\s]/g, ""); // Menghapus semua tanda baca
+
+            document.getElementById("hasil").innerHTML = `<strong>Hasil:</strong> ${hasilText}`;
+        }
+    </script>
+</body>
+</html>
