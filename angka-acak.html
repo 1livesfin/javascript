@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Angka Acak</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .number {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #000;
+            display: inline-block;
+            width: 120px;
+            height: 80px;
+            line-height: 80px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Generator Angka Acak</h2>
+    <div class="number" id="randomNumber">?</div>
+    <br>
+    <button onclick="generateRandom()">Hasilkan Angka Acak</button>
+
+    <script>
+        function generateRandom() {
+            let min = 1;
+            let max = 100;
+            let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById("randomNumber").innerText = randomNum;
+        }
+    </script>
+</body>
+</html> 

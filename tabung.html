@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Tabung</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Hitung Volume dan Luas Permukaan Tabung</h2>
+        <label for="radius">Jari-jari (cm):</label>
+        <input type="number" id="radius">
+        <label for="height">Tinggi (cm):</label>
+        <input type="number" id="height">
+        <button onclick="hitungTabung()">Hitung</button>
+        <div id="hasil"></div>
+    </div>
+    <script>
+function hitungTabung() {
+    let r = document.getElementById("radius").value;
+    let h = document.getElementById("height").value;
+    
+    if (r <= 0 || h <= 0) {
+        alert("Masukkan nilai yang benar!");
+        return;
+    }
+
+    let volume = Math.PI * Math.pow(r, 2) * h;
+    let luasPermukaan = 2 * Math.PI * r * (r + h);
+
+    document.getElementById("hasil").innerHTML = `
+        <h3>Hasil Perhitungan:</h3>
+        <p>Volume: ${volume.toFixed(2)} cm³</p>
+        <p>Luas Permukaan: ${luasPermukaan.toFixed(2)} cm²</p>
+    `;
+}
+    </script>
+</body>
+</html>

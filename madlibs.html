@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Permainan Mad Libs</h2>
+    <p>Isi kata-kata di bawah ini:</p>
+    
+    <input type="text" id="noun" placeholder="Kata benda">
+    <input type="text" id="verb" placeholder="Kata kerja">
+    <input type="text" id="adjective" placeholder="Kata sifat">
+    <button onclick="generateStory()">Buat Cerita</button>
+    
+    <p id="story"></p>
+
+    <script>
+        function generateStory() {
+            let noun = document.getElementById("noun").value;
+            let verb = document.getElementById("verb").value;
+            let adjective = document.getElementById("adjective").value;
+
+            if (!noun || !verb || !adjective) {
+                document.getElementById("story").innerText = "Masukkan semua kata terlebih dahulu!";
+                return;
+            }
+
+            let story = `Suatu hari, sebuah ${noun} yang sangat ${adjective} memutuskan untuk ${verb} di taman.`;
+            document.getElementById("story").innerText = story;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Suhu</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        input, select, button { margin: 5px; padding: 8px; }
+    </style>
+</head>
+<body>
+    <h2>Konversi Suhu</h2>
+    <input type="number" id="inputSuhu" placeholder="Masukkan suhu">
+    <select id="inputUnit">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+    </select>
+    <button onclick="konversiSuhu()">Konversi</button>
+    <h3>Hasil: <span id="hasil"></span></h3>
+
+    <script>
+        function konversiSuhu() {
+            let suhu = parseFloat(document.getElementById("inputSuhu").value);
+            let unit = document.getElementById("inputUnit").value;
+            let hasil;
+
+            if (unit === "celsius") {
+                hasil = (suhu * 9/5) + 32;
+                document.getElementById("hasil").innerText = hasil.toFixed(2) + " °F";
+            } else {
+                hasil = (suhu - 32) * 5/9;
+                document.getElementById("hasil").innerText = hasil.toFixed(2) + " °C";
+            }
+        }
+    </script>
+</body>
+</html>

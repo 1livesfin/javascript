@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Dadu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .dice {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #000;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Simulasi Lemparan Dadu</h2>
+    <div class="dice" id="dice">🎲</div>
+    <br>
+    <button onclick="rollDice()">Lempar Dadu</button>
+
+    <script>
+        function rollDice() {
+            let diceValue = Math.floor(Math.random() * 6) + 1; // Angka acak dari 1 hingga 6
+            document.getElementById("dice").innerText = diceValue;
+        }
+    </script>
+</body>
+</html>

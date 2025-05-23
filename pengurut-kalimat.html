@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengurutan Kata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Program Pengurutan Kata</h2>
+    <input type="text" id="sentenceInput" placeholder="Masukkan kalimat">
+    <button onclick="sortWords()">Urutkan</button>
+    <p id="result"></p>
+
+    <script>
+        function sortWords() {
+            let sentence = document.getElementById("sentenceInput").value;
+            if (sentence.trim() === "") {
+                document.getElementById("result").innerText = "Masukkan kalimat terlebih dahulu!";
+                return;
+            }
+            let words = sentence.split(" ").sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+            document.getElementById("result").innerText = "Hasil: " + words.join(" ");
+        }
+    </script>
+</body>
+</html>

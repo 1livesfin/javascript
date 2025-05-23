@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Pengguna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #biodata {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form Biodata</h2>
+    <input type="text" id="nama" placeholder="Masukkan nama">
+    <input type="number" id="umur" placeholder="Masukkan umur">
+    <input type="text" id="alamat" placeholder="Masukkan alamat">
+    <button onclick="tampilkanBiodata()">Tampilkan Biodata</button>
+
+    <div id="biodata"></div>
+
+    <script>
+        function tampilkanBiodata() {
+            let nama = document.getElementById("nama").value;
+            let umur = document.getElementById("umur").value;
+            let alamat = document.getElementById("alamat").value;
+
+            if (!nama || !umur || !alamat) {
+                document.getElementById("biodata").innerHTML = "Harap masukkan semua data!";
+                return;
+            }
+
+            document.getElementById("biodata").innerHTML = `
+                <p><strong>Nama:</strong> ${nama}</p>
+                <p><strong>Umur:</strong> ${umur} tahun</p>
+                <p><strong>Alamat:</strong> ${alamat}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

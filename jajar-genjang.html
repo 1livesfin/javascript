@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Jajar Genjang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hitung Luas & Keliling Jajar Genjang</h2>
+    <input type="number" id="alas" placeholder="Masukkan panjang alas">
+    <input type="number" id="tinggi" placeholder="Masukkan tinggi">
+    <input type="number" id="sisi" placeholder="Masukkan panjang sisi miring">
+    <button onclick="hitung()">Hitung</button>
+    
+    <p id="hasil"></p>
+
+    <script>
+        function hitung() {
+            let alas = parseFloat(document.getElementById("alas").value);
+            let tinggi = parseFloat(document.getElementById("tinggi").value);
+            let sisi = parseFloat(document.getElementById("sisi").value);
+
+            if (!alas || !tinggi || !sisi) {
+                document.getElementById("hasil").innerText = "Masukkan semua nilai terlebih dahulu!";
+                return;
+            }
+
+            let luas = alas * tinggi;
+            let keliling = 2 * (alas + sisi);
+
+            document.getElementById("hasil").innerText = `Luas: ${luas}, Keliling: ${keliling}`;
+        }
+    </script>
+</body>
+</html>

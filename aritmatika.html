@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Aritmatika</title>
+</head>
+<body>
+    <h2>Operasi Aritmatika</h2>
+    <label>Angka 1: <input type="number" id="angka1"></label><br>
+    <label>Angka 2: <input type="number" id="angka2"></label><br>
+    <button onclick="hitung('+')">Tambah</button>
+    <button onclick="hitung('-')">Kurang</button>
+    <button onclick="hitung('*')">Kali</button>
+    <button onclick="hitung('/')">Bagi</button>
+    <p>Hasil: <span id="hasil"></span></p>
+
+    <script>
+        function hitung(operator) {
+            let angka1 = parseFloat(document.getElementById("angka1").value);
+            let angka2 = parseFloat(document.getElementById("angka2").value);
+            let hasil;
+
+            if (operator === '+') hasil = angka1 + angka2;
+            else if (operator === '-') hasil = angka1 - angka2;
+            else if (operator === '*') hasil = angka1 * angka2;
+            else if (operator === '/') hasil = angka1 / angka2;
+
+            document.getElementById("hasil").textContent = hasil;
+        }
+    </script>
+</body>
+</html>
