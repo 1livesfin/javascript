@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penerjemah Bahasa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        select, input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #hasil {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Penerjemah Bahasa</h2>
+    <select id="sourceLang">
+        <option value="id">Bahasa Indonesia</option>
+        <option value="en">Bahasa Inggris</option>
+        <option value="fr">Bahasa Perancis</option>
+        <option value="es">Bahasa Spanyol</option>
+    </select>
+    <select id="targetLang">
+        <option value="en">Bahasa Inggris</option>
+        <option value="id">Bahasa Indonesia</option>
+        <option value="fr">Bahasa Perancis</option>
+        <option value="es">Bahasa Spanyol</option>
+    </select>
+    <br>
+    <input type="text" id="textInput" placeholder="Masukkan teks">
+    <button onclick="translateText()">Terjemahkan</button>
+    
+    <p id="hasil"></p>
+
+    <script>
+        async function translateText() {
+            let text = document.getElementById("textInput").value;
+            let sourceLang = document.getElementById("sourceLang").value;
+            let targetLang = document.getElementById("targetLang").value;
+
+            if (!text) {
+                document.getElementById("hasil").innerText = "Harap masukkan teks!";
+                return;
+            }
+
+            let url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${sourceLang}|${targetLang}`;
+
+            try {
+                let response = await fetch(url);
+                let data = await response.json();
+                let translatedText = data.responseData.translatedText;
+                
+                document.getElementById("hasil").innerHTML = `<strong>Hasil Terjemahan:</strong> ${translatedText}`;
+            } catch (error) {
+                document.getElementById("hasil").innerText = "Terjadi kesalahan dalam penerjemahan!";
+            }
+        }
+    </script>
+</body>
+</html>
